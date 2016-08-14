@@ -1,0 +1,5 @@
+library("cummeRbund")
+cuff_data=readCufflinks('diffout')
+gene_diff=diffData(genes(cuff_data))
+sig_gene_data=subset(gene_diff,(significant=='yes'))
+write.table(sig_gene_data,file="diffgene",quote = FALSE)
